@@ -1,0 +1,43 @@
+- A constructor is a special block that runs when an object is created.
+- It has three important rules:
+
+- 1.It's name must match the class name.
+- 2.It has no return type.
+- 3.It runs automatically when you use new.
+
+- Constructors are used to initialize objects.
+
+- Types: 
+1. Default constructor (given by Java if you don’t write one)
+2. No-argument constructor (Example 1)
+3. Parameterized constructor (Example 2)
+4. Overloaded constructors (multiple constructors in one class)(Example 3)
+
+
+- Important Interview Points
+
+~ Java creates a default constructor only if you write none.
+~ Using this() lets you call one constructor from another.
+~ Constructors cannot be inherited.
+~ Constructors can be private (used in Singleton pattern).
+~ You cannot explicitly return a value from a constructor.
+
+
+Common Interview Questions
+
+1. Why do we need constructors?
+-  To ensure object starts with valid values.
+
+2. Can a constructor be static?
+-  No. Static means “belongs to the class,” but constructors belong to objects and run during object creation.
+
+3. Can a constructor be final?
+-  No, final means “cannot be overridden,”, but constructors are never overridden in the first place.
+
+4. Can a constructor be abstract?
+-  No.
+-  Abstract means “incomplete.”
+-  Constructors must be complete because they initialize objects.
+
+5. What happens if you call another constructor using this()?
+-  It must be the first line in the constructor.
