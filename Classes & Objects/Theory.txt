@@ -1,0 +1,32 @@
+- A class is a template. It defines what data an object will have and what action it can perform.
+- An object is a real instance created from a class. Each object has its own copy of the class's variable.
+
+- A class does not occupy heap memory. An object does.
+
+
+Important Points for Interviews
+
+- A class is loaded once, but you can create many objects from it.
+- Objects are stored in heap memory.
+- Reference variables are stored in stack memory.
+- Each object has independent data unless the variables are static.
+
+
+Common Interview Questions
+
+1. What is a class?
+- A class is a template that defines variables and methods.
+
+2. What is an object?
+- An object is an instance of a class created in heap memory.
+
+3. How do you create an object in Java?
+- By using the new keyword.
+- Example: Student s = new Student();
+
+4. Are methods stored inside an object?
+- No. Methods are stored in the class’s method area.
+- Objects only store data (variables).
+
+5. Can multiple objects share the same data?
+- Yes, only if the variable is static.
