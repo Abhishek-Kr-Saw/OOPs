@@ -1,0 +1,40 @@
+The this Keyword in Java : 
+
+- this is a reference variable that always refers to the current object.
+- Inside any method or constructor, this means: “the object on which the method was called.”
+
+5 uses of this : 
+
+- 1. To refer to the current object’s instance variables (Example 1)
+- 2. To call another method of the same class (Example 2)
+- 3. To call another constructor (Constructor Chaining) (Example 3)
+- 4. To pass the current object as an argument (Example 4)
+- 5. To return the current object
+
+
+Interview Questions
+
+1. Why do we use this keyword in constructor?
+- To differentiate between instance variables and parameters with the same name.
+
+
+2. What if you don’t use this inside a constructor when parameters have the same name?
+- Local variables shadow instance variables.
+- Assignments won’t happen.
+
+
+3. Can you use this() and super() together?
+- No. Both must be the first statement in a constructor.
+
+
+4. What is constructor chaining using this()?
+- Using one constructor to call another constructor within the same class.
+
+
+5. Can this be used in a static context?
+
+- No.
+
+- Reason:
+    Static context belongs to the class, not to an object.
+    this refers to an object, so it cannot be used.
