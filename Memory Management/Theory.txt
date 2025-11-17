@@ -1,0 +1,122 @@
+- Java manages memory using two main areas:
+
+1. Stack Memory
+
+- And the entire system is supported by the Garbage Collector (GC).
+
+- Stack stores:
+
+• Local variables
+• Method calls
+• References (not objects, only references)
+
+- Stack works in LIFO (Last In First Out) style.
+
+public static void main(String[] args) {
+    int x = 10;                // Stored in Stack
+    Student s = new Student(); // 's' stored in Stack, object in Heap
+    test();                    // New block pushed
+}
+
+
+2. Heap Memory
+
+Heap stores:
+
+• Objects
+• Instance variables
+• Arrays
+• Strings (in String Pool inside Heap)
+
+Heap is shared by all threads.
+
+Student s = new Student();
+ s -> goes in Stack
+ new Student() -> is in Heap
+
+
+3. Garbage Collection 
+
+- Java removes unused objects automatically.
+- An object becomes eligible for GC when no reference points to it.
+
+- Example : Student s1 = new Student("A");
+            s1 = null;
+
+- Example : Student s1 = new Student("A");
+            Student s2 = new Student("B");
+            s1 = s2;
+
+            Now both references point to the object "B".
+            Object "A" has no reference and will be cleaned.
+
+
+
+4. Finalized() method 
+
+- Before Java 9, finalize() was used to clean up before GC.
+Example : protected void finalize() {
+              System.out.println("Object destroyed");
+          }
+
+- “Finalize() is deprecated because it caused performance issues and unpredictable behavior. Java now encourages using try-with-resources and cleaners.”
+
+
+5. Memory Leak
+
+6. String Pool : Strings are stored differently.
+Example :   String s1 = "Hello"; // goes to String Pool
+            String s2 = "Hello"; // reuses same object
+            String s3 = new String("Hello"); // new object in heap
+
+
+Common Interview Questions
+
+1. Why do we need constructors?
+-  To ensure object starts with valid values.
+
+2. Can a constructor be static?
+-  No. Static means “belongs to the class,” but constructors belong to objects and run during object creation.
+
+3. Can a constructor be final?
+-  No, final means “cannot be overridden,”, but constructors are never overridden in the first place.
+
+4. Can a constructor be abstract?
+-  No.
+-  Abstract means “incomplete.”
+-  Constructors must be complete because they initialize objects.
+
+5. What happens if you call another constructor using this()?
+-  It must be the first line in the constructor.
+
+
+
+Most Asked Interview Questions
+
+1. Stack vs Heap?
+
+Stack:
+- Stores references and local data
+- Fast, automatically cleared
+- Lifespan ends with method
+
+Heap:
+- Stores actual objects
+- Shared memory
+- Cleared by GC
+
+
+2. When does an object become eligible for GC?
+- When no live reference exists.
+
+
+3. Can we force GC?
+- No. We can request using System.gc().
+
+
+4. What is a memory leak?
+- Unused objects remain referenced, so GC cannot remove them.
+
+
+5. Why was finalize() removed (in JAVA 9)?
+- It was slow, unpredictable, and caused memory issues.
